@@ -1,0 +1,33 @@
+node1: 0xB4ffCe5bF7EB17543DC2a6ad4E3CcFc51B8Ff208
+password: 1002
+
+node1: 0x9bBba19C28c1984ECb34af09e68c494250626ae7
+password: 1002
+
+bootnode enode: enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:0?discport=30301
+
+enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:30301
+
+geth --networkid 1002 --datadir "./data" --bootnodes enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:0?discport=30301 --port 30303 --ipcdisable --syncmode full --allow-insecure-unlock --unlock 0xB4ffCe5bF7EB17543DC2a6ad4E3CcFc51B8Ff208 --password password.txt --mine console
+
+
+geth --networkid 1002 --datadir "./data" --bootnodes enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:30301 --port 30304 --ipcdisable --syncmode full --rpc --allow-insecure-unlock --unlock 0x9bBba19C28c1984ECb34af09e68c494250626ae7 --password password.txt  console
+
+geth --networkid 1002 --datadir "./data" --bootnodes enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:30301 --port 30304 --ipcdisable --syncmode full --allow-insecure-unlock --unlock 0x9bBba19C28c1984ECb34af09e68c494250626ae7 --password password.txt  console
+
+bootnode -nodekey "./boot.key" -verbosity 7 -addr "127.0.0.1:30301"
+
+
+
+//
+bootnode -nodekey "./boot.key" -verbosity 7 -addr "127.0.0.1:30301"
+geth --networkid 1002 --datadir ./data --bootnodes enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:30301 --port 30303 --ipcdisable --ws --ws.port 8000 --ws.api personal,eth,net,web3 --ws.origins '*' --syncmode full --allow-insecure-unlock --unlock 0xB4ffCe5bF7EB17543DC2a6ad4E3CcFc51B8Ff208 --password password.txt --mine console 
+geth --networkid 1002 --datadir ./data --bootnodes enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:30301 --port 30304 --ipcdisable --ws --ws.port 8001 --ws.api personal,eth,net,web3 --ws.origins '*' --syncmode full --allow-insecure-unlock --unlock 0x9bBba19C28c1984ECb34af09e68c494250626ae7 --password password.txt  console
+
+--http --http.port 8000 --http.api personal,eth,net,web3 --http.corsdomain
+
+
+bootnode -nodekey "./boot.key" -verbosity 7 -addr "127.0.0.1:30301"
+geth --networkid 1002 --datadir ./data --bootnodes enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:30301 --port 30303 --ipcdisable --http --http.port 8000 --http.api personal,eth,net,web3 --http.corsdomain '*' --ws --ws.port 8000 --ws.api personal,eth,net,web3 --ws.origins '*' --syncmode full --allow-insecure-unlock --unlock 0xB4ffCe5bF7EB17543DC2a6ad4E3CcFc51B8Ff208 --password password.txt --mine console 
+geth --networkid 1002 --datadir ./data --bootnodes enode://1f00b05d9646322eef645f4d59e870830930dc37674d3f2772d3e9751ab01373babf95f0655fad1704cc1ef88785cd5caad0920969769d99a82d31a58541d381@127.0.0.1:30301 --port 30304 --ipcdisable --http --http.port 8001 --http.api personal,eth,net,web3 --http.corsdomain '*' --ws --ws.port 8001 --ws.api personal,eth,net,web3 --ws.origins '*' --syncmode full --allow-insecure-unlock --unlock 0x9bBba19C28c1984ECb34af09e68c494250626ae7 --password password.txt  console
+
